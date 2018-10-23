@@ -62,6 +62,8 @@ def get_acc_base():
     file = open('lms_accounts.txt', 'r')
     mass = []
     for acc in file:
+        if acc[0] == '/':
+            break
         login = acc[:6]
         password = acc[7:11]
         mass.append((login,password))
@@ -170,7 +172,7 @@ def check(html):
 
 def main():
     global correct, incorrect, relatively
-    urls = ['http://lms.mai.ru/mod/quiz/view.php?id=19492','http://lms.mai.ru/mod/quiz/view.php?id=19491']
+    urls = ['http://lms.mai.ru/mod/quiz/view.php?id=15033']
     urls_number = len(urls)
     acc_base = get_acc_base()
     for url in urls:
